@@ -1,0 +1,236 @@
+@font-face {
+    font-family: 'futura-pt';
+    src: url('fonts/FuturaCyrillicBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    /* Corporate color */
+    --pnb-red: #dd0000;
+
+    /* Warm colors */
+    --dark-red: #9d2346;
+    --pink: #e35178;
+    --orange: #e96d1b;
+    --dark-yellow: #f7a823;
+    --yellow: #ffde14;
+    --light-green: #bbc934;
+
+    /* Cool colors */
+    --purple: #603f90;
+    --dark-blue: #224271;
+    --medium-blue: #1d78af;
+    --light-blue: #369cd1;
+    --aqua: #006e79;
+
+    /* Natural colors */
+    --dark-green: #1d724a;
+    --medium-green: #56a446;
+    --black: #1d1d1b;
+    --warm-gray: #75848b;
+    --dark-brown: #683f31;
+    --light-brown: #b37f27;
+    --army-green: #758a50;
+}
+
+body {
+    font-family: 'futura-pt', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    background-color: white;
+    color: var(--pnb-red);
+    padding: 20px;
+    margin: -20px -20px 20px -20px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header img {
+    height: 40px;
+}
+
+h1 {
+    font-family: 'futura-pt', Arial, sans-serif;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: var(--pnb-red);
+    margin: 0;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border: 1px solid var(--warm-gray);
+    background-color: #eee;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.map-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.map-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.layer-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.layer-control {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "visibility name delete"
+        "... slider ...";
+    grid-gap: 10px;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.layer-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    grid-area: name;
+}
+
+.slider-container {
+    width: 100%;
+    grid-area: slider;
+    grid-column: 1 / -1;
+    margin-top: 5px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: var(--medium-blue);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'futura-pt', Arial, sans-serif;
+}
+
+button:hover {
+    background-color: var(--dark-blue);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 5px;
+    -webkit-appearance: none;
+    background: var(--medium-blue);
+    outline: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--medium-blue);
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--medium-blue);
+    cursor: pointer;
+}
+
+.file-upload {
+    padding: 8px 16px;
+    background-color: var(--pnb-red);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'futura-pt', Arial, sans-serif;
+}
+
+.file-upload:hover {
+    background-color: var(--dark-red);
+}
+
+.fullscreen-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    z-index: 10;
+}
+
+#clearButton {
+    background-color: var(--warm-gray);
+}
+
+#clearButton:hover {
+    background-color: var(--black);
+}
+
+#downloadButton {
+    background-color: var(--medium-green);
+}
+
+#downloadButton:hover {
+    background-color: var(--dark-green);
+}

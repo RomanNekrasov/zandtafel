@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brabant Schakelt Zandtafel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Brabant Schakelt Zandtafel</h1>
+            <img src="PNB%20Logo-100pt-RGB-2.1.svg" alt="Provincie Noord-Brabant">
+        </div>
+
+        <div class="controls">
+            <label class="file-upload">
+                Kaart Uploaden
+                <input type="file" id="mapUpload" accept="image/png" multiple>
+            </label>
+            <button id="clearButton">Wis Alle Kaarten</button>
+            <button id="downloadButton">Huidige Weergave Opslaan</button>
+        </div>
+
+        <div class="map-container" id="mapContainer">
+            <button class="fullscreen-button" id="fullscreenButton">⛶</button>
+        </div>
+
+        <h2>Kaartlagen</h2>
+        <div class="layer-controls" id="layerControls">
+            <div class="layer-control">
+                <div class="layer-name">Nog geen kaarten geüpload</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
